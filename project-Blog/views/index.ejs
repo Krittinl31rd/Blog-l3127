@@ -1,0 +1,31 @@
+<div class="row g-5 py-3">
+    <div class="col-md-12">
+
+
+        <h4 class="fst-italic">Recent posts</h4>
+        <ul class="list-unstyled">
+            <% data.forEach(e=> { %>
+                <li>
+                    <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top"
+                        href="/post/<%= e._id%>">
+                        <div class="col-lg-8">
+                            <h6 class="mb-0">
+                                <%= e.title %>
+                            </h6>
+                            <small class="text-body-secondary">
+                                <%= e.createdAt.toDateString() %>
+                            </small>
+                        </div>
+                    </a>
+                </li>
+                <% }) %>
+        </ul>
+
+        <% if (nextPage !==null) { %>
+            <nav class="blog-pagination" aria-label="Pagination">
+                <a class="btn btn-outline-dark rounded-pill" href="/?page=<%= nextPage %>">
+                    View Older Posts</a>
+            </nav>
+            <% } %>
+    </div>
+</div>
