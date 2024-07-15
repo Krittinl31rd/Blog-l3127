@@ -1,1 +1,1 @@
-© 2024 HummingBird • Built with NodeJs & MongoDB
+© 2024 <b>HummingBird</b> • Built with NodeJs & MongoDB
