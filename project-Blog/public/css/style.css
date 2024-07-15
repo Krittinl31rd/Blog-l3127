@@ -1,0 +1,8 @@
+@font-face {
+  font-family: "LINESeedSans";
+  src: url("/css/fonts/LINESeedSans_Bd.ttf");
+}
+
+body {
+  font-family: "LINESeedSans" !important;
+}

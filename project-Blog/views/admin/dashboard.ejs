@@ -1,0 +1,31 @@
+<div class="row g-5 py-3">
+    <div class="col-md-12">
+        <div class="d-flex justify-content-between">
+            <h4 class="fst-italic">Posts</h4>
+            <a class="text-dark" href="/admin/addpost">+ Add new</a>
+        </div>
+        <ul class="list-unstyled">
+            <% data.forEach(e=> { %>
+                <li class="d-flex justify-content-between align-items-center border-top">
+                    <a class="py-3 link-body-emphasis text-decoration-none" href="#">
+                        <div class="col-lg-12">
+                            <h6 class="mb-0">
+                                <%= e.title %>
+                            </h6>
+                        </div>
+                    </a>
+                    <div class="d-flex">
+                        <a class="text-dark btn btn-link" href="/admin/post/<%= e._id %>"><i
+                                class="bi bi-pencil-square"></i></a>
+                        <form action="/admin/api/deletepost/<%= e._id %>?_method=DELETE" method="post">
+                            <button type="submit" class="text-danger btn btn-link"><i class="bi bi-trash-fill"
+                                    onclick="return confirm('Are you sure deleted post?')"></i></button>
+                        </form>
+                        <!-- <a class="text-danger text-decoration-none" href=""><i class="bi bi-trash-fill"></i></a> -->
+                    </div>
+                </li>
+                <% }) %>
+        </ul>
+
+    </div>
+</div>
